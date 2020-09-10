@@ -1,0 +1,23 @@
+{
+    "name": "tencentcloud/cynosdb",
+    "description": "TencentCloudApi php sdk cynosdb",
+    "type": "library",
+    "homepage": "https://github.com/tencentcloud-sdk-php/cynosdb",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "tencentcloudapi",
+            "email": "tencentcloudapi@tencent.com",
+            "homepage": "https://github.com/tencentcloud-sdk-php/cynosdb",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "tencentcloud/common": "VERSION"
+    },
+    "autoload": {
+        "psr-4": {
+            "TencentCloud\\": "./src/TencentCloud"
+        }
+    }
+}
