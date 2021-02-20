@@ -28,13 +28,13 @@ use TencentCloud\Common\AbstractModel;
 注意：此字段可能返回 null，表示取不到有效值。
  * @method void setDealNames(array $DealNames) 设置订单号
 注意：此字段可能返回 null，表示取不到有效值。
- * @method array getResourceIds() 获取资源ID列表
+ * @method array getResourceIds() 获取资源ID列表（异步发货可能无法返回该字段, 强烈建议使用dealNames字段查询接口DescribeResourcesByDealName获取异步发货的资源ID）
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setResourceIds(array $ResourceIds) 设置资源ID列表
+ * @method void setResourceIds(array $ResourceIds) 设置资源ID列表（异步发货可能无法返回该字段, 强烈建议使用dealNames字段查询接口DescribeResourcesByDealName获取异步发货的资源ID）
 注意：此字段可能返回 null，表示取不到有效值。
- * @method array getClusterIds() 获取集群ID列表
+ * @method array getClusterIds() 获取集群ID列表（异步发货可能不返回该字段, 强烈建议使用dealNames查询接口DescribeResourcesByDealName获取异步发货的集群ID）
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setClusterIds(array $ClusterIds) 设置集群ID列表
+ * @method void setClusterIds(array $ClusterIds) 设置集群ID列表（异步发货可能不返回该字段, 强烈建议使用dealNames查询接口DescribeResourcesByDealName获取异步发货的集群ID）
 注意：此字段可能返回 null，表示取不到有效值。
  * @method array getBigDealIds() 获取大订单号
 注意：此字段可能返回 null，表示取不到有效值。
@@ -58,13 +58,13 @@ class CreateClustersResponse extends AbstractModel
     public $DealNames;
 
     /**
-     * @var array 资源ID列表
+     * @var array 资源ID列表（异步发货可能无法返回该字段, 强烈建议使用dealNames字段查询接口DescribeResourcesByDealName获取异步发货的资源ID）
 注意：此字段可能返回 null，表示取不到有效值。
      */
     public $ResourceIds;
 
     /**
-     * @var array 集群ID列表
+     * @var array 集群ID列表（异步发货可能不返回该字段, 强烈建议使用dealNames查询接口DescribeResourcesByDealName获取异步发货的集群ID）
 注意：此字段可能返回 null，表示取不到有效值。
      */
     public $ClusterIds;
@@ -85,9 +85,9 @@ class CreateClustersResponse extends AbstractModel
 注意：此字段可能返回 null，表示取不到有效值。
      * @param array $DealNames 订单号
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param array $ResourceIds 资源ID列表
+     * @param array $ResourceIds 资源ID列表（异步发货可能无法返回该字段, 强烈建议使用dealNames字段查询接口DescribeResourcesByDealName获取异步发货的资源ID）
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param array $ClusterIds 集群ID列表
+     * @param array $ClusterIds 集群ID列表（异步发货可能不返回该字段, 强烈建议使用dealNames查询接口DescribeResourcesByDealName获取异步发货的集群ID）
 注意：此字段可能返回 null，表示取不到有效值。
      * @param array $BigDealIds 大订单号
 注意：此字段可能返回 null，表示取不到有效值。
