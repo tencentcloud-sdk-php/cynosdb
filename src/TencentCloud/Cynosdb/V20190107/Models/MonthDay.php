@@ -18,20 +18,28 @@ namespace TencentCloud\Cynosdb\V20190107\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeBackupConfig请求参数结构体
+ * 月份日期信息
  *
- * @method string getClusterId() 获取<p>集群ID</p>
- * @method void setClusterId(string $ClusterId) 设置<p>集群ID</p>
+ * @method integer getMonth() 获取月份信息
+ * @method void setMonth(integer $Month) 设置月份信息
+ * @method integer getDay() 获取日期信息
+ * @method void setDay(integer $Day) 设置日期信息
  */
-class DescribeBackupConfigRequest extends AbstractModel
+class MonthDay extends AbstractModel
 {
     /**
-     * @var string <p>集群ID</p>
+     * @var integer 月份信息
      */
-    public $ClusterId;
+    public $Month;
 
     /**
-     * @param string $ClusterId <p>集群ID</p>
+     * @var integer 日期信息
+     */
+    public $Day;
+
+    /**
+     * @param integer $Month 月份信息
+     * @param integer $Day 日期信息
      */
     function __construct()
     {
@@ -46,8 +54,12 @@ class DescribeBackupConfigRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("ClusterId",$param) and $param["ClusterId"] !== null) {
-            $this->ClusterId = $param["ClusterId"];
+        if (array_key_exists("Month",$param) and $param["Month"] !== null) {
+            $this->Month = $param["Month"];
+        }
+
+        if (array_key_exists("Day",$param) and $param["Day"] !== null) {
+            $this->Day = $param["Day"];
         }
     }
 }
