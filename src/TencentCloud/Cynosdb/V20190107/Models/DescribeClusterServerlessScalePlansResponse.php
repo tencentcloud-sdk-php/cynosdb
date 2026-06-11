@@ -18,19 +18,26 @@ namespace TencentCloud\Cynosdb\V20190107\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeInstanceSpecs返回参数结构体
+ * DescribeClusterServerlessScalePlans返回参数结构体
  *
- * @method array getInstanceSpecSet() 获取<p>规格信息</p>
- * @method void setInstanceSpecSet(array $InstanceSpecSet) 设置<p>规格信息</p>
+ * @method integer getTotalCount() 获取计划总数
+ * @method void setTotalCount(integer $TotalCount) 设置计划总数
+ * @method array getServerlessScalePlans() 获取策略列表
+ * @method void setServerlessScalePlans(array $ServerlessScalePlans) 设置策略列表
  * @method string getRequestId() 获取唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  */
-class DescribeInstanceSpecsResponse extends AbstractModel
+class DescribeClusterServerlessScalePlansResponse extends AbstractModel
 {
     /**
-     * @var array <p>规格信息</p>
+     * @var integer 计划总数
      */
-    public $InstanceSpecSet;
+    public $TotalCount;
+
+    /**
+     * @var array 策略列表
+     */
+    public $ServerlessScalePlans;
 
     /**
      * @var string 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
@@ -38,7 +45,8 @@ class DescribeInstanceSpecsResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param array $InstanceSpecSet <p>规格信息</p>
+     * @param integer $TotalCount 计划总数
+     * @param array $ServerlessScalePlans 策略列表
      * @param string $RequestId 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -54,12 +62,16 @@ class DescribeInstanceSpecsResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("InstanceSpecSet",$param) and $param["InstanceSpecSet"] !== null) {
-            $this->InstanceSpecSet = [];
-            foreach ($param["InstanceSpecSet"] as $key => $value){
-                $obj = new InstanceSpec();
+        if (array_key_exists("TotalCount",$param) and $param["TotalCount"] !== null) {
+            $this->TotalCount = $param["TotalCount"];
+        }
+
+        if (array_key_exists("ServerlessScalePlans",$param) and $param["ServerlessScalePlans"] !== null) {
+            $this->ServerlessScalePlans = [];
+            foreach ($param["ServerlessScalePlans"] as $key => $value){
+                $obj = new ClusterServerlessScalePlan();
                 $obj->deserialize($value);
-                array_push($this->InstanceSpecSet, $obj);
+                array_push($this->ServerlessScalePlans, $obj);
             }
         }
 
